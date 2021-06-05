@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Two Point Flow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This full-stack project aims to help people with their menstruation, planning and health.
 
 ## Available Scripts
 
