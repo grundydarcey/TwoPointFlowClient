@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import LoginPage from './routes/loginpage/loginpage';
 
-function App() {
-  return (
-    <main className='App'>
-      <h1>Two Point Flow</h1>
-    </main>
-  );
+export default class App extends Component {
+  state = { hasError: false }
+
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <header className='app__header'>
+          header goes here
+        </header>
+        <main className='app_main'>
+          {this.state.hasError && <p className='red'>Error here</p>}
+          <Switch>
+            <Route
+              exact path={'/login'}
+              component={LoginPage}
+            />
+          </Switch>
+        </main>
+      </div>
+    )
+  }
 }
-
-export default App;
